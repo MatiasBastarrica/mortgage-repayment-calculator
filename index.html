@@ -31,29 +31,43 @@
           <form action="">
             <div>
               <label for="mortgage-amount">Mortgage Amount</label>
-              <input
-                type="number"
-                name="mortgage-amount"
-                id="mortgage-amount"
-              />
+              <div class="input-container mortgage-amount-container">
+                <input
+                  type="number"
+                  name="mortgage-amount"
+                  id="mortgage-amount"
+                />
+              </div>
             </div>
             <div class="input-grid">
               <div>
                 <label for="mortgage-term">Mortgage Term </label>
-                <input type="number" name="mortgage-term" id="mortgage-term" />
+                <div class="input-container mortgage-term-container">
+                  <input
+                    type="number"
+                    name="mortgage-term"
+                    id="mortgage-term"
+                  />
+                </div>
               </div>
               <div>
                 <label for="interest-rate">Interest Rate </label>
-                <input type="number" name="interest-rate" id="interest-rate" />
+                <div class="input-container interest-rate-container">
+                  <input
+                    type="number"
+                    name="interest-rate"
+                    id="interest-rate"
+                  />
+                </div>
               </div>
             </div>
             <div>
               <label for="mortgage-type">Mortgage Type</label>
-              <div>
+              <div class="radio-container">
                 <input type="radio" name="mortgage-type" id="mortgage-type" />
                 <span>Repayment</span>
               </div>
-              <div>
+              <div class="radio-container">
                 <input type="radio" name="mortgage-type" id="mortgage-type" />
                 <span>Interest Only</span>
               </div>
