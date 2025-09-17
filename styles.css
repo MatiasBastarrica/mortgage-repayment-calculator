@@ -61,3 +61,12 @@ input[type="number"] {
 .hide {
   display: none;
 }
+
+/* ### GENERAL STYLING ### */
+
+body {
+  background-color: var(--slate-300);
+  font-family: var(--ff-jakarta-sans);
+  font-weight: var(--fw-500);
+  color: var(--slate-100);
+}
