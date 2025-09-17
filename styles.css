@@ -17,3 +17,29 @@
   --fw-500: 500;
   --fw-700: 700;
 }
+
+/* ### CSS RESET ### */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  border: none;
+  background-color: unset;
+}
