@@ -55,3 +55,9 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* ### UTILITY CLASSES ### */
+
+.hide {
+  display: none;
+}
