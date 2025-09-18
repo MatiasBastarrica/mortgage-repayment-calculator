@@ -77,10 +77,14 @@ h2 {
 }
 
 /* ### MORTGAGE REPAYMENT CALCULATOR ### */
+
+.calculator {
+  background-color: var(--white);
+}
+
 /* ## FORM SECTION ## */
 
 .form-section {
-  background-color: var(--white);
   padding: 1.5rem 1.2rem;
 }
 
@@ -165,6 +169,11 @@ input[type="number"] {
   right: 0;
 }
 
+.input-grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
 .radio-container {
   display: flex;
   gap: 1rem;
@@ -218,4 +227,53 @@ button {
 
 .empty-results h2 {
   color: var(--white);
+}
+
+/* ### MEDIA QUERIES ### */
+
+@media (min-width: 45em) {
+  main {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    padding: 1.5rem;
+  }
+
+  .calculator {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 1.2rem;
+    overflow: hidden;
+    max-width: 980px;
+  }
+
+  .title-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form-section {
+    padding: 2.5rem;
+  }
+
+  form {
+    gap: 1.5rem;
+  }
+
+  .input-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .results-section {
+    border-bottom-left-radius: 5rem;
+    display: grid;
+    align-content: center;
+  }
+
+  button {
+    justify-self: start;
+    padding-inline: 2.5rem;
+    margin-top: 1rem;
+  }
 }
