@@ -16,6 +16,10 @@
   --ff-jakarta-sans: "Plus Jakarta Sans", sans-serif;
   --fw-500: 500;
   --fw-700: 700;
+
+  /* # UTILITIES # */
+
+  --radio-container-clr: #7f8e93;
 }
 
 /* ### CSS RESET ### */
@@ -60,6 +64,11 @@ input[type="number"] {
 
 .hide {
   display: none;
+}
+
+.radio-selection {
+  --radio-container-clr: #cdd28d;
+  background-color: #fafbe1;
 }
 
 /* ### GENERAL STYLING ### */
@@ -181,7 +190,7 @@ input[type="number"] {
 .radio-container {
   display: flex;
   gap: 1rem;
-  border: 1px solid #7f8e93;
+  border: 1px solid var(--radio-container-clr);
   border-radius: 0.2rem;
   padding: 0.6rem;
   color: #1c2e3a;
