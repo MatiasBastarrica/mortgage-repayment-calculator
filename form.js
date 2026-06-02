@@ -1,9 +1,16 @@
+import {
+  calculateInterestOnly,
+  calculateRepayment,
+} from "./mortgage-calculation.js";
+import { showResults, updateResults } from "./results.js";
+
 export const elements = {
   mortgageAmount: document.querySelector("#mortgage-amount"),
   mortgageTerm: document.querySelector("#mortgage-term"),
   interestRate: document.querySelector("#interest-rate"),
   repaymentType: document.querySelector("#repayment"),
   interestOnlyType: document.querySelector("#interest-only"),
+  form: document.querySelector("form"),
 };
 
 export function styleCheckedRadio() {
@@ -12,21 +19,38 @@ export function styleCheckedRadio() {
 }
 
 function handleRadioInput(e) {
-  //   const colors = {
-  //     containerUnselected: "#7f8e93",
-  //     containerSelected: "#cdd28d",
-  //   };
-
   const sibling =
     e.target.id === "repayment"
       ? elements.interestOnlyType
       : elements.repaymentType;
 
-  //   console.log("A RADIO INPUT has been checked");
-  //   console.log(e.target.id);
   e.target.parentElement.classList.toggle("radio-selection");
   sibling.parentElement.classList.toggle("radio-selection");
 }
 
 elements.repaymentType.addEventListener("change", handleRadioInput);
 elements.interestOnlyType.addEventListener("change", handleRadioInput);
+
+elements.form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // console.log(
+  //   elements.mortgageAmount.value,
+  //   elements.mortgageTerm.value,
+  //   elements.interestRate.value,
+  //   elements.repaymentType.checked,
+  //   elements.interestOnlyType.checked,
+  // );
+  showResults();
+  let calculation = elements.repaymentType.checked
+    ? calculateRepayment(
+        elements.mortgageAmount.value,
+        elements.mortgageTerm.value,
+        elements.interestRate.value,
+      )
+    : calculateRepayment(
+        elements.mortgageAmount.value,
+        elements.mortgageTerm.value,
+        elements.interestRate.value,
+      );
+  updateResults(calculation);
+});

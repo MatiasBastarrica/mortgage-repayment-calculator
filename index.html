@@ -36,6 +36,7 @@
                   type="number"
                   name="mortgage-amount"
                   id="mortgage-amount"
+                  required
                 />
               </div>
             </div>
@@ -47,6 +48,7 @@
                     type="number"
                     name="mortgage-term"
                     id="mortgage-term"
+                    required
                   />
                 </div>
               </div>
@@ -57,6 +59,9 @@
                     type="number"
                     name="interest-rate"
                     id="interest-rate"
+                    min="0"
+                    step="any"
+                    required
                   />
                 </div>
               </div>
@@ -68,12 +73,20 @@
                   type="radio"
                   name="mortgage-type"
                   id="repayment"
+                  value="repayment"
                   checked
+                  required
                 />
                 <label for="repayment">Repayment</label>
               </div>
               <div class="radio-container">
-                <input type="radio" name="mortgage-type" id="interest-only" />
+                <input
+                  type="radio"
+                  name="mortgage-type"
+                  id="interest-only"
+                  value="interest-only"
+                  required
+                />
                 <label for="interest-only">Interest Only</label>
               </div>
             </div>
@@ -87,34 +100,38 @@
         </div>
         <div class="results-section">
           <div class="empty-results">
-            <div class="illustration-container">
-              <img src="./assets/images/illustration-empty.svg" alt="" />
+            <div class="wrapper">
+              <div class="illustration-container">
+                <img src="./assets/images/illustration-empty.svg" alt="" />
+              </div>
+              <h2>Results shown here</h2>
+              <p>
+                Complete the form and click “calculate repayments” to see what
+                your monthly repayments would be.
+              </p>
             </div>
-            <h2>Results shown here</h2>
-            <p>
-              Complete the form and click “calculate repayments” to see what
-              your monthly repayments would be.
-            </p>
           </div>
           <div class="completed-results hide">
-            <h2>Your results</h2>
-            <p>
-              Your results are shown below based on the information you
-              provided. To adjust the results, edit the form and click
-              “calculate repayments” again. Your monthly repayments Total you'll
-              repay over the term
-            </p>
-            <div class="results-display">
-              <div>
-                <p class="display-desc">Your monthly repayment</p>
-                <div class="montyly-display-container">
-                  <span>£</span><span class="montly-number">1,797.74</span>
+            <div class="wrapper">
+              <h2>Your results</h2>
+              <p>
+                Your results are shown below based on the information you
+                provided. To adjust the results, edit the form and click
+                “calculate repayments” again.
+              </p>
+              <div class="results-display">
+                <div>
+                  <p class="display-desc">Your monthly repayment</p>
+                  <div class="monthly-display-container">
+                    <span>£</span><span class="monthly-number">1,797.74</span>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <p class="display-desc">Total you'll repay over the term</p>
-                <div class="total-display-container">
-                  <span>£</span><span class="total-number">539,322.94</span>
+                <hr />
+                <div>
+                  <p class="display-desc">Total you'll repay over the term</p>
+                  <div class="total-display-container">
+                    <span>£</span><span class="total-number">539,322.94</span>
+                  </div>
                 </div>
               </div>
             </div>
