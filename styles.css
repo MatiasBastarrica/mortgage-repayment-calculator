@@ -109,6 +109,7 @@ h1 {
 }
 
 .clear-btn {
+  align-self: flex-start;
   text-decoration: underline;
   font-size: 1rem;
 }
@@ -319,7 +320,16 @@ form button {
 
 /* ### MEDIA QUERIES ### */
 
-@media (min-width: 45em) {
+@media (min-width: 500px) {
+  .calculator {
+    max-width: 490px;
+    margin-inline: auto;
+    border-radius: 0 0 1rem 1rem;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 860px) {
   main {
     min-height: 100vh;
     display: grid;
@@ -328,6 +338,8 @@ form button {
   }
 
   .calculator {
+    max-width: unset;
+    margin-inline: unset;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     border-radius: 1.2rem;
@@ -349,6 +361,10 @@ form button {
     gap: 1.5rem;
   }
 
+  .clear-btn {
+    align-self: unset;
+  }
+
   .input-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -356,7 +372,10 @@ form button {
   .results-section {
     border-bottom-left-radius: 5rem;
     display: grid;
-    align-content: center;
+  }
+
+  .empty-results {
+    align-self: center;
   }
 
   form button {
