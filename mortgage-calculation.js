@@ -28,7 +28,7 @@ export function calculateInterestOnly(loanAmount, term, interestRate) {
     totalOverTerm: null,
   };
   result.monthly = loanAmount * monthlyRate;
-  result.totalOverTerm = result.monthly * totalPayments + loanAmount;
+  result.totalOverTerm = result.monthly * totalPayments + Number(loanAmount);
   result.monthly = result.monthly.toFixed(2);
   result.totalOverTerm = result.totalOverTerm.toFixed(2);
   return result;
