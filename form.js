@@ -2,7 +2,7 @@ import {
   calculateInterestOnly,
   calculateRepayment,
 } from "./mortgage-calculation.js";
-import { showResults, updateResults } from "./results.js";
+import { toggleReultsDisplay, updateResults } from "./results.js";
 
 export const elements = {
   mortgageAmount: document.querySelector("#mortgage-amount"),
@@ -11,6 +11,7 @@ export const elements = {
   repaymentType: document.querySelector("#repayment"),
   interestOnlyType: document.querySelector("#interest-only"),
   form: document.querySelector("form"),
+  clearBtn: document.querySelector(".clear-btn"),
 };
 
 export function styleCheckedRadio() {
@@ -28,13 +29,23 @@ function handleRadioInput(e) {
   sibling.parentElement.classList.toggle("radio-selection");
 }
 
+function handleClearBtn(e) {
+  elements.mortgageAmount.value = "";
+  elements.mortgageTerm.value = "";
+  elements.interestRate.value = "";
+  if (document.querySelector(".empty-results").classList.contains("hide")) {
+    toggleReultsDisplay();
+  }
+}
+
 elements.repaymentType.addEventListener("change", handleRadioInput);
 elements.interestOnlyType.addEventListener("change", handleRadioInput);
+elements.clearBtn.addEventListener("click", handleClearBtn);
 
 elements.form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (!document.querySelector(".empty-results").classList.contains("hide")) {
-    showResults();
+    toggleReultsDisplay();
   }
   let calculation;
   if (elements.repaymentType.checked) {

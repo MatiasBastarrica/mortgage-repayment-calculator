@@ -5,7 +5,7 @@ export const elements = {
   totalNumber: document.querySelector(".total-number"),
 };
 
-export function showResults() {
+export function toggleReultsDisplay() {
   elements.emptyResults.classList.toggle("hide");
   elements.completedResults.classList.toggle("hide");
 }

@@ -124,7 +124,7 @@ input {
   width: 100%;
 }
 
-form button {
+button {
   cursor: pointer;
 }
 
@@ -248,7 +248,7 @@ input[type="number"] {
   background-color: var(--slate-900);
 }
 
-button {
+form button {
   background-color: var(--lime);
   padding: 1rem;
   text-align: center;
@@ -359,7 +359,7 @@ button {
     align-content: center;
   }
 
-  button {
+  form button {
     justify-self: start;
     padding-inline: 2.5rem;
     margin-top: 1rem;
