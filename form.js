@@ -33,14 +33,9 @@ elements.interestOnlyType.addEventListener("change", handleRadioInput);
 
 elements.form.addEventListener("submit", (e) => {
   e.preventDefault();
-  // console.log(
-  //   elements.mortgageAmount.value,
-  //   elements.mortgageTerm.value,
-  //   elements.interestRate.value,
-  //   elements.repaymentType.checked,
-  //   elements.interestOnlyType.checked,
-  // );
-  showResults();
+  if (!document.querySelector(".empty-results").classList.contains("hide")) {
+    showResults();
+  }
   let calculation;
   if (elements.repaymentType.checked) {
     calculation = calculateRepayment(
@@ -55,17 +50,5 @@ elements.form.addEventListener("submit", (e) => {
       elements.interestRate.value,
     );
   }
-  // let calculation =
-  //   elements.repaymentType.checked === true
-  //     ? calculateRepayment(
-  //         elements.mortgageAmount.value,
-  //         elements.mortgageTerm.value,
-  //         elements.interestRate.value,
-  //       )
-  //     : calculateRepayment(
-  //         elements.mortgageAmount.value,
-  //         elements.mortgageTerm.value,
-  //         elements.interestRate.value,
-  //       );
   updateResults(calculation);
 });
