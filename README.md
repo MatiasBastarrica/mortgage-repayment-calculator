@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [My solution](https://your-solution-url.com)
+- Solution URL: [My solution](https://www.frontendmentor.io/solutions/mortgage-repayment-calculator-mb-tTIBexrJpz)
 - Live Site URL: [Live preview](https://matiasbastarrica.github.io/mortgage-repayment-calculator/)
 
 ## My process
