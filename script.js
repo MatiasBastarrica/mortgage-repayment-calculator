@@ -5,7 +5,7 @@ import {
 } from "./mortgage-calculation.js";
 
 styleCheckedRadio();
-console.log(elements);
-console.log(calculateRepayment(300000, 25, 5.25));
+// console.log(elements);
+// console.log(calculateRepayment(300000, 25, 5.25));
 
-console.log(calculateInterestOnly(300000, 25, 5.25));
+// console.log(calculateInterestOnly(300000, 25, 5.25));
